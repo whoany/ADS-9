@@ -3,7 +3,7 @@
 #include <vector>
 #include <ctime>
 #include "tree.h"
- 
+
 int main() {
   std::vector<char> in = {'1', '2', '3'};
   PMTree tree(in);
@@ -14,7 +14,6 @@ int main() {
       std::cout << perms[i][j];
     std::cout << std::endl;
   }
-  
   std::vector<char> p1 = getPerm1(tree, 2);
   std::vector<char> p2 = getPerm2(tree, 2);
   std::cout << "getPerm1(2): ";
@@ -25,21 +24,18 @@ int main() {
   for (int i = 0; i < p2.size(); i++)
     std::cout << p2[i];
   std::cout << std::endl;
-  
   std::cout << "\nn  getAllPerms  getPerm1  getPerm2" << std::endl;
   for (int n = 1; n <= 8; n++) {
     std::vector<char> alphabet;
     for (int i = 0; i < n; i++)
       alphabet.push_back('1' + i);
     PMTree t(alphabet);
-    
     clock_t start = clock();
     getAllPerms(t);
     double timeAll = static_cast<double>(clock() - start) / CLOCKS_PER_SEC;
     start = clock();
     getPerm1(t, 1);
     double time1 = static_cast<double>(clock() - start) / CLOCKS_PER_SEC;
-    
     start = clock();
     getPerm2(t, 1);
     double time2 = static_cast<double>(clock() - start) / CLOCKS_PER_SEC;
