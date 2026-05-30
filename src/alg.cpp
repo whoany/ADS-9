@@ -27,7 +27,7 @@ int64_t factorial(int n) {
     result *= i;
   return result;
 }
-}
+} //namespace
 
 std::vector<std::vector<char>> getAllPerms(PMTree& tree) {
   std::vector<std::vector<char>> result;
@@ -41,7 +41,7 @@ std::vector<char> getPerm1(PMTree& tree, int num) {
   if (num < 1 || num > static_cast<int>(all.size()))
     return {};
   return all[num - 1];
-} //namespace
+}
 
 std::vector<char> getPerm2(PMTree& tree, int num) {
   PMTree::Node* node = tree.getRoot();
