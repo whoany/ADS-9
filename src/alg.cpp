@@ -27,7 +27,6 @@ int64_t factorial(int n) {
     result *= i;
   return result;
 }
-
 }
 
 std::vector<std::vector<char>> getAllPerms(PMTree& tree) {
